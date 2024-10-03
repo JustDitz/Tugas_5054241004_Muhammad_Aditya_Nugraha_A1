@@ -12,13 +12,11 @@ def BinSearch(arr,low,high):
     if high>=low :
         mid = (high+low) // 2
         if arr[mid] == 0 or Cek_Simbol(arr[mid],arr[mid-1]) == "YES": # Apabila nilai 0 atau perubahan tanda terjadi
-            return mid                                                
-        elif Cek_Simbol(arr[mid], arr[mid+1]) == "YES":               # Apabila perubahan terjadi antara angka saat ini dan setelahnya
-            return (mid+1)
+            return mid    
         elif Cek_Simbol(arr[mid], arr[mid+1]) == "Pos":               # Apabila kedua angkanya masih bernilai positif
-            return BinSearch(arr,low,mid-1)                           # Melakukan Searching lagi, tetapi dibelah jadi dua (ke bawah)
+            high = mid-1                                              # Melakukan Searching lagi, tetapi dibelah jadi dua (ke bawah)
         else:
-            return BinSearch(arr,mid+1,high)                          # Apabila kedua angkanya masih bernilai negatif maka dibelah jadi dua (ke atas)
+            low = mid+1                                               # Apabila kedua angkanya masih bernilai negatif maka dibelah jadi dua (ke atas)
     else: high        
     
 N,M = map(int, input().split())
