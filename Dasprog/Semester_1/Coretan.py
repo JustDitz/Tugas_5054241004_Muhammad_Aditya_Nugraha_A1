@@ -209,12 +209,12 @@
 # balik_tabel = []
 
 # def ans(n):
-#     if n > 0:
-#         balik_tabel.insert(0, sim(n))
-#         ans(n-1)
+#     if n >= 0:
+#         balik_tabel.insert(len(balik_tabel), sim(n))
+#         return ans(n-1)
 
 # n = int(input())
-# ans = []
+# ans(n)
 # print(balik_tabel)
 
 # tabel = []    
